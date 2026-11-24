@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Делай Красиво! — Кузовной ремонт и детейлинг в Самаре</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#111214',
+                        cardBg: '#1B1C20',
+                        cardHover: '#24252B',
+                        accent: '#D97834',
+                        accentHover: '#E58846',
+                        mainText: '#F2EAD3',
+                        mutedText: '#A8A29E',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 25px -5px rgba(217, 120, 52, 0.25)',
+                        'glow-lg': '0 0 35px -5px rgba(217, 120, 52, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #111214;
+            color: #F2EAD3;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-header {
+            background: rgba(17, 18, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(27, 28, 32, 0.9) 0%, rgba(20, 21, 25, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .pulse-badge {
+            animation: pulse-slow 3s infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111214;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2B30;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D97834;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-mainText antialiased selection:bg-accent selection:text-white">
+
+    <!-- Шапка (Header) -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-[#2A2B30]/50 transition-all duration-300">
+        <div class="max-w-md mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2 group">
+                <div class="w-9 h-9 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-glow">
+                    <i class="fa-solid fa-car-side text-sm"></i>
+                </div>
+                <span class="font-black text-lg tracking-wider bg-gradient-to-r from-mainText via-white to-mutedText bg-clip-text text-transparent">
+                    ДЕЛАЙ <span class="text-accent">КРАСИВО!</span>
+                </span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <a href="tel:+79000000000" class="w-9 h-9 rounded-xl bg-cardBg border border-[#2A2B30] flex items-center justify-center text-accent hover:border-accent/50 hover:bg-cardHover transition-all">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент (Main Wrapper) -->
+    <main class="max-w-md mx-auto px-4 pt-24 pb-16 space-y-6">
+
+        <!-- Главный блок профиля / Hero -->
+        <section class="glass-card rounded-3xl p-6 text-center relative overflow-hidden shadow-xl border border-[#2A2B30]">
+            <!-- Декоративный фон -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-accent/5 rounded-full blur-3xl pointer-events-none">
